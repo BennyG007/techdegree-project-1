@@ -35,15 +35,15 @@ const quotes = [
   }
 ];
 
-console.log(quotes);
-
-
 /***
  * `getRandomQuote` function
+ * This function grabs a random quote from the Quotes array above.
 ***/
-function getRandomQuote(arr) {
-  const randomNum = Math.floor( Math.random() * quotes.length )
-  return randomNum;
+function getRandomQuote() {
+  const randomNum = Math.floor(Math.random() * quotes.length);
+  const randomQuote = quotes[randomNum];
+  return randomQuote;
+    
   // 1. Create a variable that generates a random number
   // between zero and the last index in the `quotes` array
 
@@ -53,6 +53,10 @@ function getRandomQuote(arr) {
 
   // 3. Return the variable storing the random quote object
 }
+
+
+
+
 
 
 /***
