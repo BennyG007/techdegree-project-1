@@ -8,7 +8,7 @@ project 1 - A Random Quote Generator
   // Reach out in your Slack community - https://treehouse-fsjs-102.slack.com/app_redirect?channel=chit-chat
 
 /*** 
- * Below is an array of quotes. Some quotes include who said it, the year it was said and certain attributes. 
+ * Below is an array of 10 different quotes. The quotes include who said it, some include the year it was said and other attributes. 
 ***/
 const quotes = [
   {
@@ -35,14 +35,32 @@ const quotes = [
     quote: "Tell me and I forget. Teach me and I remember. Involve me and I learn.",
     source: "Benjamin Franklin",
     tags: ["education"]
+  },
+  {
+    quote: "Your time is limited, so don't waste it living someone else's life. Don't be trapped by dogma – which is living with the results of other people's thinking.",
+    source: "Steve Jobs"
+  },
+  {
+    quote: "You will face many defeats in life, but never let yourself be defeated.",
+    source: "Maya Angelou"
+  },
+  {
+    quote: "In the end, it's not the years in your life that count. It's the life in your years.",
+    source:"Abraham Lincoln"
+  },
+  {
+    quote: "Many of life's failures are people who did not realize how close they were to success when they gave up.",
+    source:"Thomas A Edison"
+  },
+  {
+    quote: "You have brains in your head. You have feet in your shoes. You can steer yourself any direction you choose.",
+    source: "Dr. Seuss"
   }
 ];
 
 /***
  * The purpose of the random quote function is to grab a quote from the array above at random. It will ultimately be used to display that random quote on the web page. 
- ***/
-
-// The getRandomQuote() function generates a random number. This is used to grab a random ojbect from the array of quotes above.  
+ ***/ 
 
 function getRandomQuote() {
   const randomNum = Math.floor(Math.random() * quotes.length);
@@ -54,29 +72,39 @@ function getRandomQuote() {
  * `printQuote` function - this function will print out a random quote to the webpage. 
 ***/
 function printQuote() {
-  const callRandomQuote = getRandomQuote();
+  const randomQuote = getRandomQuote();
 
-  let htmlString = `<p class="quote">${callRandomQuote.quote}</p>
-                    <p class="source">${callRandomQuote.source}`;
+  let htmlString = `<p class="quote">${randomQuote.quote}</p>
+                    <p class="source">${randomQuote.source}`;
   
   // The following if statements will check if the objects contain citations, years or tags. If the statement is true, it will print to the page, if false, then it will close the strings above. 
 
-  if (callRandomQuote.citation) {
-    htmlString += `<span class="citation">${callRandomQuote.citation}</span>`;
+  if (randomQuote.citation) {
+    htmlString += `<span class="citation">${randomQuote.citation}</span>`;
   } 
 
-  if (callRandomQuote.year) {
-    htmlString += `<span class="year">${callRandomQuote.year}</span>`;
+  if (randomQuote.year) {
+    htmlString += `<span class="year">${randomQuote.year}</span>`;
   } 
   
-  if (callRandomQuote.tags) {
-    htmlString += `<span class="tags">, ${callRandomQuote.tags.join(', ')}</span>`;
+  if (randomQuote.tags) {
+    htmlString += `<span class="tags">, ${randomQuote.tags.join(', ')}</span>`;
   } else {
     htmlString += `</p>`;
   }
 
   document.getElementById('quote-box').innerHTML = htmlString;
 
+// Function below creates a random color and sets the background color accordingly. 
+
+function randomBackground () {
+  
+  let r = Math.floor(Math.random() * 256);
+  let g = Math.floor(Math.random() * 256);
+  let b = Math.floor(Math.random() * 256);
+  let backColor = `${r},${g},${b}`;
+  document.body.style.background = `rgb(${backColor})`;
+}   
   randomBackground();
 }
 
@@ -90,13 +118,3 @@ setInterval(printQuote, 10000);
 
 document.getElementById('load-quote').addEventListener("click", printQuote, false);
 
-// Function below creates a random color and sets the background color accordingly. 
-
-function randomBackground () {
-  
-  let r = Math.floor(Math.random() * 256);
-  let g = Math.floor(Math.random() * 256);
-  let b = Math.floor(Math.random() * 256);
-  let backColor = `${r},${g},${b}`;
-  document.body.style.background = `rgb(${backColor})`;
-} 
