@@ -76,14 +76,8 @@ function printQuote() {
   }
 
   document.getElementById('quote-box').innerHTML = htmlString;
-}
 
-function randColor () {
-  return Math.floor(Math.random() * 256);
-}
-
-function randomBackgroun () {
-  
+  randomBackground();
 }
 
 // This simply refreshes the page automatically every 5 seconds if no action is taken. 
@@ -95,3 +89,14 @@ setInterval(printQuote, 5000);
 ***/
 
 document.getElementById('load-quote').addEventListener("click", printQuote, false);
+
+// Function below creates a random color and sets the background color accordingly. 
+
+function randomBackground () {
+  
+  let r = Math.floor(Math.random() * 256);
+  let g = Math.floor(Math.random() * 256);
+  let b = Math.floor(Math.random() * 256);
+  let backColor = `${r},${g},${b}`;
+  document.body.style.background = `rgb(${backColor})`;
+} 
