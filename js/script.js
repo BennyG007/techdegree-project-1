@@ -95,7 +95,9 @@ function printQuote() {
 
   document.getElementById('quote-box').innerHTML = htmlString;
 
-// Function below creates a random color and sets the background color accordingly. 
+/*** 
+  *Function below creates a random color and sets the background color accordingly. 
+***/
 
 function randomBackground () {
   
