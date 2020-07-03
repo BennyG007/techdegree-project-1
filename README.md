@@ -5,4 +5,4 @@ TechDegree Project 1
 
  If nothing is selected, the page will auto refresh every 10 seconds with a new quote. 
 
- The background color of the page also changes everytime you click the button or no action is taken for 5 seconds. 
+ The background color of the page also changes everytime you click the button or no action is taken for 10 seconds. 
