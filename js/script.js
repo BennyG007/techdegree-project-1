@@ -80,8 +80,8 @@ function printQuote() {
   randomBackground();
 }
 
-// This simply refreshes the page automatically every 5 seconds if no action is taken. 
-setInterval(printQuote, 5000);
+// This simply refreshes the page automatically every 10 seconds if no action is taken. 
+setInterval(printQuote, 10000);
 
 /***
  * click event listener for the print quote button
