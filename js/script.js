@@ -88,13 +88,16 @@ function printQuote() {
 
   if (callRandomQuote.year) {
     htmlString += `<span class="year">${callRandomQuote.year}</span>`;
-  } 
-  
-  if (callRandomQuote.tags) {
-    htmlString += `<span class="tags">${callRandomQuote.tags.join(', ')}</span>`;
   } else {
     htmlString += `</p>`;
   }
+  
+
+  // // if (callRandomQuote.tags) {
+  // //   htmlString += `<span class="tags">${callRandomQuote.tags.join(', ')}</span>`;
+  // } else {
+  //   htmlString += `</p>`;
+  // // }
   // 5. After the two if statements, concatenate the closing </p> 
   // tag to the HTML string
 
@@ -102,6 +105,8 @@ function printQuote() {
   // complete HTML string
   document.getElementById('quote-box').innerHTML = htmlString;
 }
+console.log(typeof callRandomQuote);
+
 
 
 
